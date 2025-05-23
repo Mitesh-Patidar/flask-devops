@@ -9,7 +9,18 @@ pipeline {
                }
             }
         }
- 
+
+      stage('Run Unit Test') {
+         steps {
+             script{
+                  docker.image('flask-devops').inside {
+                             sh 'python test_app.py'
+                        }   
+                     }
+                }
+          }
+
+
       stage('Run Docker Container') {
          steps {
              script {
