@@ -13,7 +13,7 @@ pipeline {
       stage('Run Docker Container') {
          steps {
              script {
-                 docker.image ('flask-devops').run('-p 5001:5000)
+                 docker.image ('flask-devops').run('-p 5001:5000')
                }
             }
          }
